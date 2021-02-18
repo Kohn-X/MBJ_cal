@@ -1,0 +1,16 @@
+###Read PBE wavefunction
+ ISTART=1 
+ ICHARG=0 
+ ENCUT=400 
+ EDIFF=1E-6
+ NELM=300 
+ ISMEAR=-5
+
+###MBJ:
+ METAGGA=MBJ
+ LASPH=.TRUE.
+ LMAXMIX=4
+ GGA=CA
+#CMBJ=XXX
+
+ NPAR=8
