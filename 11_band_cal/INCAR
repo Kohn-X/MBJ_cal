@@ -1,0 +1,46 @@
+System=
+ ISTART=0                       #startjob: 0-new 1-cont 2-samecut 
+ ICHARG=11                      #charge: 1-file 2-atom 10-const
+ ENCUT=400                      #energy cutoff in eV
+ EDIFF=1E-6                     #stopping-criterion for electronic upd. 
+ NELM=300                       #nr. of electronic steps
+ ISMEAR=0                       #part. occupancies: -5 Blochl -4-tet -1-fermi 0-gaus 0 MP
+ SIGMA=0.05                     #broadening in eV -4-tet -1-fermi 0-gaus
+ IALGO=38                       #algorithm: use only 8 (CG) or 48 (RMM-DIIS), default CG algorithm (IALGO=38)
+#LREAL=Auto                     #non-local projectors in real space, Auto for large cell, False for small cell
+ NBANDS=240
+
+#------------------ 
+#ISPIN=2                        !spin polarized calculation (2-yes 1-no)
+#MAGMOM=17*0                    !initial mag moment / atom
+#LSORBIT=.TRUE.                 !if .TRUE. switches on spin-orbit coupling and automatically sets LNONCOLLINEAR= .TRUE.
+#SAXIS= 0 0 1                   !quantisation axis for spin
+#ISYM=0                         !symmetry: 0-nonsym 1-usesym
+
+Dynamic:
+#ISIF=2                         #2:relax ions only; 3:also relax volume and cell shape; 4:relax ions+cellshape, volume=fixed 
+#IBRION=2                       #ionic relaxation: 0-MD 1-quasi-New 2-CG
+#NSW=300                        #number of steps for ionic upd
+#EDIFFG=-0.01                   #stopping-criterion for ionic upd
+                
+Mix:
+#LMAXMIX=4                      
+#AMIX=0.2         
+#BMIX=0.0001                    #most zero,but 0 will crash some versions
+#AMIX_MAG=0.8     
+#BMIX_MAG=0.0001                #most zero,but 0 will crash some versions
+                 
+DOS:
+ LORBIT=11                      #create PROOUT
+#RWIGS=1.22                     #Wigner-Seitz radii
+#EMIN=-20          
+#EMAX=15           
+#NEDOS=2000        
+
+Paralellisation:
+ NPAR=8
+#KPAR=4
+
+Output:
+ LCHARG=.FALSE.                 #don't create CHGCAR
+ LWAVE=.FALSE.                  #don't create WAVECAR
